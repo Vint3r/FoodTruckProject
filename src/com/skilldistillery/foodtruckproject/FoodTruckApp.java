@@ -8,7 +8,8 @@ public class FoodTruckApp {
 		Scanner input = new Scanner(System.in);
 		FoodTruck[] ftArr;
 		String foodTruckName, typeOfFood;
-		int truckRating, counter = 0;
+		double truckRating; 
+		int counter = 0;
 		FoodTruck foodTruck;
 
 		System.out.println("Welcome to the food truck app!");
@@ -30,7 +31,7 @@ public class FoodTruckApp {
 				typeOfFood = input.next();
 
 				System.out.println("Please enter the rating you wish to give the truck (1-10)");
-				truckRating = input.nextInt();
+				truckRating = input.nextDouble();
 
 				foodTruck = new FoodTruck(foodTruckName, typeOfFood, truckRating);
 				ftArr[counter] = foodTruck;
@@ -38,6 +39,7 @@ public class FoodTruckApp {
 			}
 		}
 		foodTruck = new FoodTruck();
+		boolean choice = true;
 		
 		do {
 			System.out.println("+=======================================+");
@@ -46,25 +48,29 @@ public class FoodTruckApp {
 			System.out.println("|3.) Get highest rated and lowest rated*|");
 			System.out.println("|4.) ***************Quit****************|");
 			System.out.println("+=======================================+");
+			System.out.println();
 			int userIn = input.nextInt();
 			
 			switch (userIn) {
 			case 1:
 				foodTruck.getAllTruckInfo(ftArr);
-				continue;
+				break;
 			case 2:
 				foodTruck.getAverage(ftArr);
-				continue;
+				break;
 			case 3:
 				foodTruck.getHighLow(ftArr);
 				continue;
 			case 4:
+				choice = false;
+				System.out.println("Thank you for using the Food Tuck App!!");
+				System.out.println("We hope to see you again soon!");
 				break;
 			default:
 				System.out.println("That is not a valid input... Please try again");
-				continue;
+				break;
 			}
-		} while (true);
+		} while (choice);
 	}
 
 }

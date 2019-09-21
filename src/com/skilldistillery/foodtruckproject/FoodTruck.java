@@ -45,11 +45,47 @@ public class FoodTruck {
 		return builder.toString();
 	}
 	
-	public double getAverage(FoodTruck[] foodTruck) {
-		FoodTruck trucks = new FoodTruck();
+	public double getRating() {
+		return this.truckRating;
+	}
+	
+	public String getName() {
+		return this.truckName;
+	}
+	
+	public void getAverage(FoodTruck[] foodTruck) {
+		double theRating = 0;
+		int counter = 0;
 		for (int i = 0; i < foodTruck.length; i++) {
-			trucks = foodTruck[i];
+			if (foodTruck[i] != null) {
+				theRating = theRating + foodTruck[i].getRating();
+				counter++;
+			} else {
+				break;
+			}
 		}
+		System.out.println(theRating / counter);
+	}
+	
+	public void getHighLow(FoodTruck[] foodTruck) {
+		double highRating = foodTruck[0].getRating();
+		double lowRating = foodTruck[0].getRating();
+		String highName = "";
+		String lowName = "";
+		for (int i = 0; i < foodTruck.length; i++) {
+			if (foodTruck[i] == null) {
+				break;
+		} else if(foodTruck[i].getRating() > highRating) {
+				highRating = foodTruck[i].getRating();
+				highName = foodTruck[i].getName();
+			} 
+			else if (foodTruck[i].getRating() < lowRating) {
+				lowRating = foodTruck[i].getRating();
+				lowName = foodTruck[i].getName();
+			}
+		}
+		System.out.println("The highest rated truck is: " + highName + ", with a rating of: " + highRating);
+		System.out.println("The lowest rated truck is: " + lowName + ", with a rating of: " + lowRating);
 	}
 
 }
