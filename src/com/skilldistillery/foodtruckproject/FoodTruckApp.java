@@ -32,6 +32,14 @@ public class FoodTruckApp {
 
 				System.out.println("Please enter the rating you wish to give the truck (1-10)");
 				truckRating = input.nextDouble();
+				if (truckRating > 10) {
+					System.out.println("That is not a valid input please only pick a number between 1 and 10");
+					truckRating = input.nextDouble();
+				} 
+				else if (truckRating < 1) {
+					System.out.println("That is not a valid input please only pick a number between 1 and 10");
+					truckRating = input.nextDouble();
+				}
 
 				foodTruck = new FoodTruck(foodTruckName, typeOfFood, truckRating);
 				ftArr[counter] = foodTruck;
@@ -42,26 +50,45 @@ public class FoodTruckApp {
 		boolean choice = true;
 		
 		do {
-			System.out.println("+=======================================+");
-			System.out.println("|1.) Display all trucks on screen*******|");
-			System.out.println("|2.) Get average rating of all trucks***|");
-			System.out.println("|3.) Get highest rated and lowest rated*|");
-			System.out.println("|4.) ***************Quit****************|");
-			System.out.println("+=======================================+");
+			System.out.println("+========================================+");
+			System.out.println("|1.) ****Display all trucks on screen****|");
+			System.out.println("|2.) **Get average rating of all trucks**|");
+			System.out.println("|3.) *Get highest rated and lowest rated*|");
+			System.out.println("|4.) ******Highest rated truck info******|");
+			System.out.println("|5.) ****************Quit****************|");
+			System.out.println("+========================================+");
 			System.out.println();
-			int userIn = input.nextInt();
+			String userIn = input.next();
 			
-			switch (userIn) {
-			case 1:
+			switch (userIn.toLowerCase()) {
+			case "1":
+			case "one":
+			case "display all trucks on screen":
+			case "display all":
+			case "display all trucks":
 				foodTruck.getAllTruckInfo(ftArr);
 				break;
-			case 2:
+			case "2":
+			case "two":
+			case "get average rating of all trucks":
+			case "get average":
 				foodTruck.getAverage(ftArr);
 				break;
-			case 3:
+			case "3":
+			case "three":
+			case "get highest rated and lowest rated":
 				foodTruck.getHighLow(ftArr);
-				continue;
-			case 4:
+				break;
+			case "4":
+			case "four":
+			case "highest rated truck info":
+			case "highest rated":
+				foodTruck.getHighTruckInfo(ftArr);
+				break;
+			case "5":
+			case "five":
+			case "quit":
+			case "exit":
 				choice = false;
 				System.out.println("Thank you for using the Food Tuck App!!");
 				System.out.println("We hope to see you again soon!");
@@ -71,6 +98,8 @@ public class FoodTruckApp {
 				break;
 			}
 		} while (choice);
+		
+		input.close();
 	}
 
 }

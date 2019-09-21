@@ -1,19 +1,19 @@
 package com.skilldistillery.foodtruckproject;
 
-import java.util.Scanner;
-
 public class FoodTruck {
 	private String truckName;
 	private String foodMade;
-	private static int truckId = 0;
 	private double truckRating;
+	private int truckId = 0;
+	private static int nextTruckId = 1;
 
 	public FoodTruck(String truckName, String foodMade, double truckRating) {
 		this.truckName = truckName;
 		this.foodMade = foodMade;
 		this.truckRating = truckRating;
-		this.truckId = truckId;
-		truckId++;
+		this.truckId = nextTruckId;
+		nextTruckId++;
+		
 	}
 	
 	public FoodTruck() {
@@ -86,6 +86,23 @@ public class FoodTruck {
 		}
 		System.out.println("The highest rated truck is: " + highName + ", with a rating of: " + highRating);
 		System.out.println("The lowest rated truck is: " + lowName + ", with a rating of: " + lowRating);
+	}
+	
+	public void getHighTruckInfo(FoodTruck[] foodTruck) {
+		double highRating = foodTruck[0].getRating();
+		int counter = 0;
+		for (int i = 0; i < foodTruck.length; i++) {
+			if (foodTruck[i] == null) {
+				break;
+			} 
+			else if (foodTruck[i].getRating() > highRating) {
+				highRating = foodTruck[i].getRating();
+				counter = i;
+			} else { 
+				continue;
+			}
+			System.out.println(foodTruck[counter].toString());
+		}
 	}
 
 }
