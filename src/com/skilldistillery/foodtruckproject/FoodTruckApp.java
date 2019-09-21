@@ -54,6 +54,7 @@ public class FoodTruckApp {
 		boolean choice = true;
 		
 		do {
+			System.out.println();
 			System.out.println("+========================================+");
 			System.out.println("|1.) ****Display all trucks on screen****|");
 			System.out.println("|2.) **Get average rating of all trucks**|");

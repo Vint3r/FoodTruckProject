@@ -68,7 +68,7 @@ public class FoodTruck {
 				break;
 			}
 		}
-		System.out.println(theRating / counter);
+		System.out.printf("The average rating of all trucks is %.2f" + (theRating / counter) + "\n");
 	}
 	
 	public void getHighLow(FoodTruck[] foodTruck) {
