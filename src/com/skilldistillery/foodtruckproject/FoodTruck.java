@@ -116,7 +116,7 @@ public class FoodTruck {
 			if (foodTruck[i] == null) {
 				break;
 			}
-			else if (userFood.equalsIgnoreCase(foodTruck[i].getFood())) {
+			else if (userFood.equalsIgnoreCase	(foodTruck[i].getFood())) {
 				counter++;
 			}
 		}

@@ -15,12 +15,13 @@ public class FoodTruckApp {
 		System.out.println("Welcome to the food truck app!");
 		System.out.println("How many trucks would you like to rate today?");
 		int truckAmount = input.nextInt();
+		input.nextLine();
 
 		ftArr = new FoodTruck[truckAmount];
 
 		while (counter < truckAmount) {
 			System.out.println("Please enter a truck name or type quit.");
-			foodTruckName = input.next();
+			foodTruckName = input.nextLine();
 
 			if (foodTruckName.equalsIgnoreCase("quit")) {
 				System.out.println("Quiting the rating system, please wait...");
@@ -28,17 +29,20 @@ public class FoodTruckApp {
 				break;
 			} else {
 				System.out.println("Please enter the type of food the truck makes. (tacos, sandwiches etc.)");
-				typeOfFood = input.next();
+				typeOfFood = input.nextLine();
 
 				System.out.println("Please enter the rating you wish to give the truck (1-10)");
 				truckRating = input.nextDouble();
+				input.nextLine();
 				if (truckRating > 10) {
 					System.out.println("That is not a valid input please only pick a number between 1 and 10");
 					truckRating = input.nextDouble();
+					input.nextLine();
 				} 
 				else if (truckRating < 1) {
 					System.out.println("That is not a valid input please only pick a number between 1 and 10");
 					truckRating = input.nextDouble();
+					input.nextLine();
 				}
 
 				foodTruck = new FoodTruck(foodTruckName, typeOfFood, truckRating);
@@ -59,7 +63,7 @@ public class FoodTruckApp {
 			System.out.println("|6.) ****************Quit****************|");
 			System.out.println("+========================================+");
 			System.out.println();
-			String userIn = input.next();
+			String userIn = input.nextLine();
 			
 			switch (userIn.toLowerCase()) {
 			case "1":
@@ -101,7 +105,7 @@ public class FoodTruckApp {
 			case "find a truck for the food you want":
 			case "food by truck":
 				System.out.println("What food are you looking for?");
-				String userFood = input.next();
+				String userFood = input.nextLine();
 				foodTruck.getTruckByFood(ftArr, userFood);
 				break;
 			default:
