@@ -53,6 +53,10 @@ public class FoodTruck {
 		return this.truckName;
 	}
 	
+	public String getFood() {
+		return this.foodMade;
+	}
+	
 	public void getAverage(FoodTruck[] foodTruck) {
 		double theRating = 0;
 		int counter = 0;
@@ -102,6 +106,34 @@ public class FoodTruck {
 				continue;
 			}
 			System.out.println(foodTruck[counter].toString());
+		}
+	}
+	
+	public void getTruckByFood(FoodTruck[] foodTruck, String userFood) {
+		FoodTruck[] userWants;
+		int counter = 0;
+		for (int i = 0; i < foodTruck.length; i++) {
+			if (foodTruck[i] == null) {
+				break;
+			}
+			else if (userFood.equalsIgnoreCase(foodTruck[i].getFood())) {
+				counter++;
+			}
+		}
+		userWants = new FoodTruck[counter];
+		
+		for (int i = 0; i < foodTruck.length; i++) {
+			if (foodTruck[i] == null) {
+				break;
+			}
+			else if (userFood.equalsIgnoreCase(foodTruck[i].getFood())) {
+				userWants[i] = foodTruck[i];
+			}
+		}
+		System.out.println("The info of the trucks that sell " + userFood + " are as follows:");
+		
+		for (int i = 0; i < userWants.length; i++) {
+			System.out.println(userWants[i].toString());
 		}
 	}
 

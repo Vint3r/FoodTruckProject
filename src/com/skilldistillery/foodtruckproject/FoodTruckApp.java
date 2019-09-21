@@ -55,7 +55,8 @@ public class FoodTruckApp {
 			System.out.println("|2.) **Get average rating of all trucks**|");
 			System.out.println("|3.) *Get highest rated and lowest rated*|");
 			System.out.println("|4.) ******Highest rated truck info******|");
-			System.out.println("|5.) ****************Quit****************|");
+			System.out.println("|5.) *Find a truck for the food you want*|");
+			System.out.println("|6.) ****************Quit****************|");
 			System.out.println("+========================================+");
 			System.out.println();
 			String userIn = input.next();
@@ -85,13 +86,23 @@ public class FoodTruckApp {
 			case "highest rated":
 				foodTruck.getHighTruckInfo(ftArr);
 				break;
-			case "5":
-			case "five":
+			case "6":
+			case "six":
 			case "quit":
 			case "exit":
 				choice = false;
 				System.out.println("Thank you for using the Food Tuck App!!");
 				System.out.println("We hope to see you again soon!");
+				break;
+			case "5":
+			case "five":
+			case "sort by food":
+			case "food":
+			case "find a truck for the food you want":
+			case "food by truck":
+				System.out.println("What food are you looking for?");
+				String userFood = input.next();
+				foodTruck.getTruckByFood(ftArr, userFood);
 				break;
 			default:
 				System.out.println("That is not a valid input... Please try again");
