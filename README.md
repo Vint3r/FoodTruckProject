@@ -13,7 +13,7 @@ uses for it's calculations and also contains all of the methods for the program 
 FoodTruckApp is the actual application that the user will see and interact with, printing
 menus and just in general taking all the information that the user inputs and passes
 it of to FoodTruck. The interface is pretty simple, it just asks what the user wants,
-and provides the information that the user wants.
+and provides the information that the user requests.
 
 ### Technologies/Topics applied
 
@@ -21,15 +21,15 @@ The FoodTruck class is the object that the whole project works around. It stores
 the information the program will need to perform all of its calculations with a variety
 of methods in its class. It has a three arg constructor for inputing all the fields it needs
 and also creates a unique id for each given truck object. A few of its methods inside of it
-are just simple "getters" that will go and grab the needed information from each truck instance,
-most of the calls for this are within the other methods of the FoodTruck class. The rest of the
+are just simple "getters" that will go and grab the needed information from each truck instance.
+Most of the calls for this are within the other methods of the FoodTruck class. The rest of the
 methods use for loops to break each array down into the information it cares about to compare,
 and then print the desired information to the screen, allowing me to keep them all as a void
 for their return type. Within the FoodTruckApp there is not a lot to go over, it first starts
 of asking the user the size of the array it will need to create to hold all the trucks the user
 will be putting into the system. After words it goes into a while loop that keeps track of how many
 trucks still needs to be put into the system before it gets out of it. However if the user decides
-they want out of the loop early they can simply type quit into the terminal and it will automatically
+they want exit out of the loop early they can simply type quit into the terminal and it will automatically
 move on. To accomplish this I used a if statement that checks for a 'quit' after it asks the user for a
 truck name. If they don't type quit it goes to the else if to proceed adding information into the system.
 After the trucks have been entered or the user leaves themselves, the user will be greeted by a menu
@@ -52,3 +52,4 @@ to get what i wanted out of the basic for loops just fine either way. This proje
 practice for me because I find that I do struggle a bit with arrays. But with all the array work I had to do
 in this program I think I can safely say that I have improved my understanding of how to use them and get them
 to work within a greater code.  
+ 
