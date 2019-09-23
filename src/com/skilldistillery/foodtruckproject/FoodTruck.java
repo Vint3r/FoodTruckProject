@@ -19,7 +19,7 @@ public class FoodTruck {
 	public FoodTruck() {
 		
 	}
-	// just for a push
+
 	public void getAllTruckInfo(FoodTruck[] foodTruck) {
 		FoodTruck[] ftReturn = new FoodTruck[foodTruck.length];
 		for (int i = 0; i < foodTruck.length; i++) {
@@ -68,7 +68,7 @@ public class FoodTruck {
 				break;
 			}
 		}
-		System.out.printf("The average rating of all trucks is %.2f" + (theRating / counter) + "\n");
+		System.out.println("The average rating of all trucks is " + (theRating / counter));
 	}
 	
 	public void getHighLow(FoodTruck[] foodTruck) {
@@ -93,7 +93,7 @@ public class FoodTruck {
 	}
 	
 	public void getHighTruckInfo(FoodTruck[] foodTruck) {
-		double highRating = foodTruck[0].getRating();
+		double highRating = 0;
 		int counter = 0;
 		for (int i = 0; i < foodTruck.length; i++) {
 			if (foodTruck[i] == null) {
@@ -120,7 +120,7 @@ public class FoodTruck {
 				counter++;
 			}
 		}
-		userWants = new FoodTruck[counter];
+		userWants = new FoodTruck[counter]; 
 		
 		for (int i = 0; i < foodTruck.length; i++) {
 			if (foodTruck[i] == null) {

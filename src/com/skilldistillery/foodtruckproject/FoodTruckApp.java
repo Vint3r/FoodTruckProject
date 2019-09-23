@@ -1,7 +1,7 @@
 package com.skilldistillery.foodtruckproject;
 
 import java.util.Scanner;
-// just for a push
+
 public class FoodTruckApp {
 
 	public static void main(String[] args) {
