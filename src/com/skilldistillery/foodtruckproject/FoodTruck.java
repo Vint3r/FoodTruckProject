@@ -72,10 +72,10 @@ public class FoodTruck {
 	}
 	
 	public void getHighLow(FoodTruck[] foodTruck) {
-		double highRating = 0;
-		double lowRating = 10;
-		String highName = "";
-		String lowName = "";
+		double highRating = foodTruck[0].getRating();
+		double lowRating = foodTruck[0].getRating();
+		String highName = foodTruck[0].getName();
+		String lowName = foodTruck[0].getName();
 		for (int i = 0; i < foodTruck.length; i++) {
 			if (foodTruck[i] == null) {
 				break;
@@ -93,7 +93,7 @@ public class FoodTruck {
 	}
 	
 	public void getHighTruckInfo(FoodTruck[] foodTruck) {
-		double highRating = 0;
+		double highRating = foodTruck[0].getRating();
 		int counter = 0;
 		for (int i = 0; i < foodTruck.length; i++) {
 			if (foodTruck[i] == null) {
