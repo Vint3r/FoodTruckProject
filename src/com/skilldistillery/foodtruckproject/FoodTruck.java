@@ -19,7 +19,7 @@ public class FoodTruck {
 	public FoodTruck() {
 		
 	}
-	
+	// just for a push
 	public void getAllTruckInfo(FoodTruck[] foodTruck) {
 		FoodTruck[] ftReturn = new FoodTruck[foodTruck.length];
 		for (int i = 0; i < foodTruck.length; i++) {
