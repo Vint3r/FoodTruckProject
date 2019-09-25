@@ -35,14 +35,18 @@ public class FoodTruckApp {
 				truckRating = input.nextDouble();
 				input.nextLine();
 				if (truckRating > 10) {
-					System.out.println("That is not a valid input please only pick a number between 1 and 10");
-					truckRating = input.nextDouble();
-					input.nextLine();
+					while(truckRating > 10) {
+						System.out.println("That is not a valid input please only pick a number between 1 and 10");
+						truckRating = input.nextDouble();
+						input.nextLine();
+					}
 				} 
 				else if (truckRating < 1) {
-					System.out.println("That is not a valid input please only pick a number between 1 and 10");
-					truckRating = input.nextDouble();
-					input.nextLine();
+					while(truckRating < 1) {
+						System.out.println("That is not a valid input please only pick a number between 1 and 10");
+						truckRating = input.nextDouble();
+						input.nextLine();
+					}
 				}
 
 				foodTruck = new FoodTruck(foodTruckName, typeOfFood, truckRating);
